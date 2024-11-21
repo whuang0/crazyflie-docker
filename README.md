@@ -8,7 +8,7 @@ To test the scripts:
 
         lsusb
 
-    Should see something like this listed:
+    Example path:
         
         Bus 003 Device 017: ID 1915:7777 Nordic Semiconductor ASA Bitcraze Crazyradio (PA) dongle
 
@@ -19,7 +19,7 @@ To test the scripts:
         docker run -it --rm --device=/dev/bus/usb/003/017 crazyflie-runner
 
 
-To test your own flight script, prior to running the docker build/run commands change the python script to your own in the Dockerfile here:
+To test own flight script, prior to running docker build/run commands change python script in Dockerfile here:
 
     # Copy the Crazyflie control script into the container
     COPY circlefly.py /app/
