@@ -5,9 +5,11 @@ This repository contains flight scripts and a Docker container to run the script
 To test the scripts:
 
     Verify usb path of Crazyflie dongle using terminal command:
+
         lsusb
 
     Should see something like this listed:
+        
         Bus 003 Device 017: ID 1915:7777 Nordic Semiconductor ASA Bitcraze Crazyradio (PA) dongle
 
 
