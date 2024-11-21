@@ -13,7 +13,7 @@ To test the scripts:
         Bus 003 Device 017: ID 1915:7777 Nordic Semiconductor ASA Bitcraze Crazyradio (PA) dongle
 
 
-    Use Bus and Device number for the docker build and run commands below:
+    Use Bus and Device number for the docker run command below:
 
         docker build -t crazyflie-runner .
         docker run -it --rm --device=/dev/bus/usb/003/017 crazyflie-runner
