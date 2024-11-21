@@ -19,7 +19,7 @@ To test the scripts:
         docker run -it --rm --device=/dev/bus/usb/003/017 crazyflie-runner
 
 
-To test own flight script, prior to running docker build/run commands change python script in Dockerfile here:
+To test different flight script, prior to running docker build/run commands change python script in Dockerfile:
 
     # Copy the Crazyflie control script into the container
     COPY circlefly.py /app/
