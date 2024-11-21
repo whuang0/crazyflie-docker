@@ -33,7 +33,7 @@ if __name__ == '__main__':
             # Wait a bit
             time.sleep(1)
 
-            print('Doing a 270deg circle');
+            print('Doing a 270deg circle')
             mc.circle_right(0.5, velocity=0.5, angle_degrees=270)
 
             print('Moving down 0.2m')
