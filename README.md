@@ -26,3 +26,10 @@ To test different flight script, prior to running docker build/run commands, cha
 
     # Default command to run the Crazyflie script
     CMD ["python", "/app/circlefly.py"]
+
+To:
+
+    # Your scripts
+    COPY Your_Flight_Script.py /app/
+
+    CMD ["python", "/app/Your_Flight_Script.py"]
