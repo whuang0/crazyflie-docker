@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN pip install --no-cache-dir cflib
 
 # Copy the Crazyflie control script into the container
-COPY circlefly.py /app/
+COPY squarefly.py /app/
 
 # Default command to run the Crazyflie script
-CMD ["python", "/app/circlefly.py"]
+CMD ["python", "/app/squarefly.py"]
