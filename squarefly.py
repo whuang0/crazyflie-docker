@@ -7,10 +7,6 @@ import cflib.crtp
 from cflib.crazyflie import Crazyflie
 from cflib.crazyflie.syncCrazyflie import SyncCrazyflie
 from cflib.positioning.motion_commander import MotionCommander
-from cflib.utils import uri_helper
-
-# URI for the Crazyflie
-URI = uri_helper.uri_from_env(default='radio://0/80/2M/E7E7E7E7E7')
 
 # Default flight height
 DEFAULT_HEIGHT = 0.5
@@ -32,7 +28,7 @@ def param_deck_flow(_, value_str):
         print('Deck is NOT attached!')
 
 # Function to make the Crazyflie fly in a square pattern
-def fly_square(scf, side_length=1):
+def fly_square(scf, side_length=2):
     with MotionCommander(scf, default_height=DEFAULT_HEIGHT) as mc:
         # Fly in a square: 4 sides, each side is side_length meters long
         for _ in range(4):
@@ -45,6 +41,16 @@ def fly_square(scf, side_length=1):
 
 if __name__ == '__main__':
     cflib.crtp.init_drivers()
+
+    # Scan for available Crazyflie interfaces
+    available = cflib.crtp.scan_interfaces()
+    if not available:
+        print('No Crazyflies found!')
+        sys.exit(1)
+
+    # Automatically select the first available URI
+    URI = available[0][0]
+    print(f'Connecting to Crazyflie at URI: {URI}')
 
     # Connect to the Crazyflie
     with SyncCrazyflie(URI, cf=Crazyflie(rw_cache='./cache')) as scf:
