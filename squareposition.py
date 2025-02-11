@@ -30,6 +30,11 @@ def param_deck_flow(_, value_str):
 def fly_square(scf):
     commander = scf.cf.high_level_commander
 
+<<<<<<< HEAD
+=======
+    # time.sleep(5)
+
+>>>>>>> 2d01036 (Updated Script for x, y coordinate testing with MotionCommander Class)
     # Take off to the default height
     commander.takeoff(DEFAULT_HEIGHT, 5)
     time.sleep(6)
