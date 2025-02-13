@@ -1,0 +1,27 @@
+use_motion_capture: false  # We only have flow decks, no external MoCap
+
+crazyflies:
+  - uri: radio://0/80/2M/E7E7E7E701
+    id: 1
+    # Initial position in [x, y, z] if you want to specify a starting location
+    initial_position: [0.0, 0.0, 0.0]
+    # 'type' can be 'default' or something else if you have a custom CF type
+    type: default
+    # tf_prefix is how it will appear in the TF tree, e.g. 'cf1/base_link'
+    tf_prefix: cf1
+
+    # (Optional) firmware_params lets you set parameters in the Crazyflie firmware
+    # Example: enable high-level commands or set the estimator type
+    firmware_params:
+      commander.enHighLevel: 1
+      stabilizer.estimator: 2  # 2 = onboard flow deck EKF
+
+# If you have multiple Crazyflies, add more entries:
+  - uri: radio://0/80/2M/E7E7E7E702
+    id: 2
+    initial_position: [1.0, 0.0, 0.0]
+    type: default
+    tf_prefix: cf2
+    firmware_params:
+      commander.enHighLevel: 1
+      stabilizer.estimator: 2
