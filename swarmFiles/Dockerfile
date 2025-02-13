@@ -1,5 +1,6 @@
 # TO RUN THIS DOCKERFILE:
 # docker build -t crazyswarm2-flow .
+# docker run -it --rm --net=host --privileged crazyswarm2-flow
 
 # Start from the official ROS 2 Humble image
 FROM ros:humble
